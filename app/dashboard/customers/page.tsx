@@ -1,3 +1,11 @@
+import Breadcrumbs from "@/app/ui/invoices/breadcrumbs"
+
 export default function Page(){
-    return <p>Customers Page</p>
+    const breadcrumbItems = [
+        { label: 'Home', href: '/' },
+        { label: 'Blog', href: '/blog' },
+        { label: 'Article', href: '/blog/my-article', active: true },
+      ];
+      
+    return <Breadcrumbs breadcrumbs={breadcrumbItems}/>
 }
