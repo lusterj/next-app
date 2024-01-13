@@ -1,4 +1,9 @@
 import Breadcrumbs from "@/app/ui/invoices/breadcrumbs"
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'Customers'
+};
 
 export default function Page(){
     const breadcrumbItems = [
