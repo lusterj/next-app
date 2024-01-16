@@ -1,7 +1,22 @@
+type PriceTier = {
+    price: number; // or string, depending on how the price data is structured
+    // Include other properties of the price tier here if needed
+  };
+
 type Experiences = {
     title: string;
-    location: string;
-}
+    id: string;
+    coverPicture: {
+        uri: {
+          original: string;
+        };
+      };
+    description: string;
+    location: {
+        name: string;
+    };
+    priceTiers: PriceTier[];
+};
 
 async function getExperiences() {
     try {
@@ -31,7 +46,7 @@ export default async function SampleCard() {
     return (
       <>
       <div>
-        {experiences.map((experience) => (
+        {experiences.map((experience: Experiences) => (
           <div key={experience.id}>
             <img src={experience.coverPicture.uri.original} alt={experience.title} />
             <div>
